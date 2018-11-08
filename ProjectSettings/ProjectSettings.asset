@@ -674,7 +674,7 @@ PlayerSettings:
     UNet: 1
   luminIcon:
     m_Name: 
-    m_ModelFolderPath: /Users/nathan/Documents/Code/Unity/Totem/Icon
+    m_ModelFolderPath: /Users/nathan/Documents/Code/Unity/Totem/Icon/Model
     m_PortalFolderPath: /Users/nathan/Documents/Code/Unity/Totem/Icon/Portal
   luminCert:
     m_CertPath: /Users/nathan/Documents/MagicLeap/Keys/dev/elmakersdev.cert

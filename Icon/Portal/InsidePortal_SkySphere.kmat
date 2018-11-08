@@ -1,0 +1,13 @@
+{
+	"global" : {},
+	"materials" : 
+	[
+		{
+			"albedo" : "Icon/Portal/InsidePortal_SkySphere.png",
+			"blendmode" : "opaque",
+			"name" : "elmakers_totem_InsidePortal_SkySphere_Mat",
+			"shaderName" : "UnlitTextured"
+		}
+	]
+}
+

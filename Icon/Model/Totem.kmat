@@ -1,0 +1,12 @@
+{
+	"global" : {},
+	"materials" : 
+	[
+		{
+			"albedo" : "Icon/Model/Totem_Albedo.png",
+			"blendmode" : "opaque",
+			"name" : "elmakers_totem_Totem_Mat",
+			"shaderName" : "UnlitTextured"
+		}
+	]
+}
