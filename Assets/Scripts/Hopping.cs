@@ -70,6 +70,7 @@ public class Hopping : MonoBehaviour {
 				_bounceSource = gameObject.AddComponent<AudioSource>();
 				_bounceSource.clip = BounceSound;
 				_bounceSource.volume = BounceVolume;
+				_bounceSource.spatialBlend = 1.0f;
 			}
 
 			_bounceSource.pitch = Random.Range(BounceMinPitch, BounceMaxPitch);
@@ -86,6 +87,7 @@ public class Hopping : MonoBehaviour {
 				_landSource = gameObject.AddComponent<AudioSource>();
 				_landSource.clip = LandSound;
 				_landSource.volume = LandVolume;
+				_landSource.spatialBlend = 1.0f;
 			}
 
 			_landSource.pitch = Random.Range(LandMinPitch, LandMaxPitch);

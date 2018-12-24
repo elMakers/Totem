@@ -11,3 +11,7 @@ He should detect obstacles and change direction to navigate around. This is all 
 If he gets stuck or jumps out of the world, use the "Pinch" gesture to grab him again.
 
 You can turn off the visibility of the world mesh (after meshing looks ok) with the thumbs up gesture.
+
+## Credits
+
+Totem model from: https://www.thingiverse.com/thing:864599
