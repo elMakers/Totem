@@ -688,6 +688,7 @@ PlayerSettings:
   - GesturesConfig
   - GesturesSubscribe
   - Internet
+  luminMinimumPlatformAPILevel: 2
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: b2d9747d-a106-4cca-a9a6-97c33ee092b2

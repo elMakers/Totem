@@ -7,53 +7,41 @@ public class Grabbable : MonoBehaviour
 	public float GrabDistance = 2.0f;
 	
 	private Rigidbody _body;
-	private bool grabbed;
 	
 	// Use this for initialization
 	private void Start () {
 		_body = GetComponent<Rigidbody>();
-		_body.useGravity = false;
-		grabbed = true;
 	}
 	
 	// Update is called once per frame
 	private void Update()
 	{
-		MLHandKeyPose pose = MLHandKeyPose.NoHand;
+		var grabbed = false;
+		var grabbedLeft = false;
+		MLHandKeyPose pose = MLHandKeyPose.NoHand;		
 		if (MLHands.Right.KeyPoseConfidence >= RequiredConfidence && MLHands.Right.KeyPose != MLHandKeyPose.NoHand)
 		{
 			pose = MLHands.Right.KeyPose;
 		} 
 		else if (MLHands.Left.KeyPoseConfidence >= RequiredConfidence)
 		{
+			grabbedLeft = true;
 			pose = MLHands.Left.KeyPose;
 		}
 
-		switch (pose)
+		if (pose == MLHandKeyPose.Pinch)
 		{
-			case MLHandKeyPose.C:
-				if (grabbed)
-				{
-					grabbed = false;
-					_body.velocity = Vector3.zero;
-					_body.angularVelocity = Vector3.zero;
-					_body.useGravity = true;
-				}
-				break;
-			case MLHandKeyPose.Pinch:
-				if (!grabbed)
-				{
-					grabbed = true;
-					_body.useGravity = false;
-					_body.velocity = Vector3.zero;
-					_body.angularVelocity = Vector3.zero;
-				}
-				break;
+			grabbed = true;
 		}
 
 		if (grabbed)
 		{
-			_body.transform.position = Camera.main.transform.position + Camera.main.transform.forward * GrabDistance;
+			Vector3 position = grabbedLeft ? MLHands.Left.Center : MLHands.Right.Center;
+			_body.transform.position = position + Camera.main.transform.forward * GrabDistance;
+			var targetRotation = Camera.main.transform.rotation.eulerAngles;
+			targetRotation.x = 0;
+			targetRotation.z = 0;
+			_body.transform.rotation = Quaternion.Euler(targetRotation);
 		}
 	}
 }
