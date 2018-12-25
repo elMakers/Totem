@@ -36,6 +36,9 @@ public class Grabbable : MonoBehaviour
 
 		if (grabbed)
 		{
+			_body.velocity = Vector3.zero;
+			_body.angularVelocity = Vector3.zero;
+			
 			Vector3 position = grabbedLeft ? MLHands.Left.Center : MLHands.Right.Center;
 			_body.transform.position = position + Camera.main.transform.forward * GrabDistance;
 			var targetRotation = Camera.main.transform.rotation.eulerAngles;
