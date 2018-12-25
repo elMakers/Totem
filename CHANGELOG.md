@@ -9,3 +9,8 @@
 ## 0.02
  
  - Added a Portal icon 
+ 
+## 0.03
+
+ - Changed grabbing behavior
+ - Added instructional text
